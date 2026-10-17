@@ -1,0 +1,878 @@
+/* =========================================================
+   1. VARIÁVEIS (cores e fontes)
+   Mude aqui e o site inteiro muda junto!
+   ========================================================= */
+:root {
+  --fundo: #f8f5ee;
+  --fundo-card: #fcfaf5;
+  --texto: #1f2a20;
+  --texto-suave: #5c6b5d;
+  --verde: #3f5a42;
+  --verde-claro: #e6e9d6;
+  --terracota: #c7774a;
+  --borda: #e3ded0;
+
+  --fonte-titulo: "Fraunces", Georgia, serif;
+  --fonte-texto: "DM Sans", Arial, sans-serif;
+}
+
+/* =========================================================
+   2. RESET E BASE
+   ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* rolagem suave ao clicar no menu */
+}
+
+body {
+  font-family: var(--fonte-texto);
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--terracota);
+}
+
+.material-symbols-outlined {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+
+/* =========================================================
+   3. CLASSES REUTILIZÁVEIS
+   ========================================================= */
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section--card {
+  background-color: var(--fundo-card);
+}
+
+.section--primary {
+  background-color: var(--verde);
+  color: var(--fundo);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--terracota);
+  margin-bottom: 1rem;
+}
+
+.eyebrow--light {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.muted {
+  color: var(--texto-suave);
+  margin-bottom: 1rem;
+}
+
+.small {
+  font-size: 0.875rem;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background-color: var(--verde);
+  color: var(--fundo);
+}
+
+.btn--primary:hover {
+  background-color: #334a36;
+}
+
+.btn--outline {
+  border: 1px solid var(--borda);
+}
+
+.btn--outline:hover {
+  background-color: var(--verde-claro);
+}
+
+.btn--lg {
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+}
+
+.icon-circle,
+.icon-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--verde-claro);
+  color: var(--verde);
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.icon-square {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* =========================================================
+   4. CABEÇALHO
+   ========================================================= */
+.header {
+  position: sticky; /* fica grudado no topo ao rolar */
+  top: 0;
+  z-index: 50;
+  background-color: rgba(248, 245, 238, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--borda);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--verde);
+  color: var(--fundo);
+}
+
+.logo__icon .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo__text strong,
+.logo__name {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.logo__text small {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--texto-suave);
+}
+
+/* Menu no celular: escondido até clicar no botão */
+.nav {
+  display: none;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--fundo);
+  border-bottom: 1px solid var(--borda);
+}
+
+.nav.aberto {
+  display: flex; /* o JavaScript adiciona a classe "aberto" */
+}
+
+.nav a {
+  padding: 0.75rem 0.5rem;
+}
+
+.nav .nav__cta {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--texto);
+  padding: 0.5rem;
+}
+
+/* Aviso de projeto fictício */
+.aviso-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--terracota);
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.aviso-demo .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+.aviso-demo p {
+  line-height: 1.3;
+}
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+.hero {
+  padding: 2.5rem 0 4rem;
+}
+
+.hero__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badge {
+  width: fit-content;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  background-color: var(--verde-claro);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--texto-suave);
+  max-width: 28rem;
+}
+
+.hero__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+}
+
+.rating strong {
+  color: var(--texto);
+}
+
+.stars {
+  color: var(--terracota);
+  letter-spacing: 2px;
+}
+
+.hero__image {
+  position: relative;
+  max-width: 28rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero__image img {
+  aspect-ratio: 4 / 5;
+  border-radius: 8rem 2rem 2rem 2rem; /* canto superior esquerdo bem arredondado */
+}
+
+.hero__stat {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  border: 1px solid var(--borda);
+  background-color: var(--fundo-card);
+  box-shadow: 0 10px 30px rgba(63, 90, 66, 0.1);
+  font-size: 0.875rem;
+  line-height: 1.2;
+  color: var(--texto-suave);
+}
+
+.hero__stat-number {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  color: var(--verde);
+}
+
+/* =========================================================
+   6. SOBRE
+   ========================================================= */
+.about__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about__image {
+  aspect-ratio: 4 / 3;
+  border-radius: 2rem;
+  max-height: 32rem;
+}
+
+.pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.pillars li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pillars h3 {
+  font-family: var(--fonte-texto);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.pillars p {
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+}
+
+/* =========================================================
+   7. ATENDIMENTOS
+   ========================================================= */
+.section__head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.section__head--center {
+  align-items: center;
+  text-align: center;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px; /* o "gap" mostra a cor de fundo, criando linhas finas */
+  background-color: var(--borda);
+  border: 1px solid var(--borda);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: var(--fundo);
+  transition: background-color 0.2s;
+}
+
+.service:hover {
+  background-color: var(--fundo-card);
+}
+
+.service:hover .icon-square {
+  background-color: var(--verde);
+  color: var(--fundo);
+}
+
+.service h3 {
+  font-size: 1.25rem;
+}
+
+.service p {
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+}
+
+/* =========================================================
+   8. COMO FUNCIONA
+   ========================================================= */
+.process__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.process__image {
+  margin-top: 1.5rem;
+  aspect-ratio: 16 / 10;
+  border-radius: 2rem;
+}
+
+.steps li {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.steps li:first-child {
+  padding-top: 0;
+}
+
+.steps li:last-child {
+  border-bottom: none;
+}
+
+.steps__number {
+  font-family: var(--fonte-titulo);
+  font-size: 2.25rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.steps h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.steps p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   9. DEPOIMENTOS
+   ========================================================= */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--borda);
+  background-color: var(--fundo-card);
+}
+
+.testimonial__quote {
+  font-size: 2rem;
+  color: var(--terracota);
+}
+
+.testimonial blockquote {
+  flex: 1;
+  font-family: var(--fonte-titulo);
+  font-size: 1.125rem;
+}
+
+.testimonial figcaption {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--borda);
+}
+
+.testimonial figcaption strong {
+  font-weight: 500;
+}
+
+.testimonial figcaption span {
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+}
+
+/* =========================================================
+   10. DÚVIDAS (FAQ)
+   ========================================================= */
+.faq__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.faq details {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--borda);
+}
+
+.faq details:first-child {
+  padding-top: 0;
+}
+
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  cursor: pointer;
+  list-style: none; /* remove a setinha padrão */
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary .material-symbols-outlined {
+  color: var(--verde);
+  transition: transform 0.3s;
+}
+
+.faq details[open] summary .material-symbols-outlined {
+  transform: rotate(45deg); /* o "+" vira "x" quando aberto */
+}
+
+.faq details p {
+  margin-top: 1rem;
+  color: var(--texto-suave);
+  max-width: 36rem;
+}
+
+/* =========================================================
+   11. CHAMADA FINAL
+   ========================================================= */
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem 1.5rem;
+  border-radius: 2.5rem;
+  background-color: var(--verde-claro);
+  text-align: center;
+}
+
+.cta h2 {
+  max-width: 42rem;
+}
+
+.cta em {
+  font-weight: 400;
+}
+
+.cta .muted {
+  max-width: 32rem;
+  margin-bottom: 1rem;
+}
+
+/* =========================================================
+   12. RODAPÉ
+   ========================================================= */
+.footer {
+  border-top: 1px solid var(--borda);
+}
+
+.footer__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.footer .logo {
+  margin-bottom: 0.75rem;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-style: normal;
+  font-size: 0.875rem;
+  color: var(--texto-suave);
+}
+
+.footer__contact .material-symbols-outlined {
+  font-size: 1rem;
+  color: var(--verde);
+  margin-right: 0.25rem;
+}
+
+.footer__contact a:hover {
+  color: var(--texto);
+}
+
+.footer__social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--borda);
+  transition: background-color 0.2s;
+}
+
+.footer__social a:hover {
+  background-color: var(--verde-claro);
+}
+
+.footer__copy {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--borda);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+/* =========================================================
+   13. RESPONSIVO
+   A partir de 640px (tablet) e 768px (computador)
+   ========================================================= */
+@media (min-width: 640px) {
+  .hero__buttons {
+    flex-direction: row;
+  }
+
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .section {
+    padding: 7rem 0;
+  }
+
+  /* Menu vira horizontal e o botão hambúrguer some */
+  .header__inner {
+    height: 80px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 0.875rem;
+  }
+
+  .nav a {
+    padding: 0;
+    color: var(--texto-suave);
+  }
+
+  .nav a:hover {
+    color: var(--texto);
+  }
+
+  .nav .nav__cta {
+    margin-top: 0;
+    padding: 0.6rem 1.25rem;
+    color: var(--fundo);
+  }
+
+  /* Seções lado a lado */
+  .hero__grid,
+  .about__grid,
+  .process__grid,
+  .faq__grid {
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .hero__grid > *,
+  .about__grid > *,
+  .process__grid > * {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .process__grid,
+  .faq__grid {
+    align-items: flex-start;
+  }
+
+  .faq__grid > div:first-child {
+    flex: 1;
+  }
+
+  .faq {
+    flex: 1.5;
+  }
+
+  .hero {
+    padding: 4rem 0 6rem;
+  }
+
+  .hero__image {
+    max-width: none;
+  }
+
+  .hero__stat {
+    left: -2rem;
+  }
+
+  .about__image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .section__head {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .section__head .muted {
+    max-width: 24rem;
+  }
+
+  .section__head--center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cta {
+    padding: 6rem 4rem;
+  }
+
+  .footer__grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pillars {
+    flex-direction: row;
+  }
+
+  .pillars li {
+    flex: 1;
+  }
+}

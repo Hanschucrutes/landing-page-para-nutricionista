@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helena Duarte | Nutricionista (Projeto Conceitual)</title>
+  <meta name="description" content="Nutrição acolhedora e baseada em ciência, sem dietas restritivas. Consultas presenciais e online.">
+
+  <!-- Fontes do Google: Fraunces (títulos) e DM Sans (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Ícones do Google (Material Symbols). Uso: <span class="material-symbols-outlined">nome_do_icone</span> -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="aviso-demo" role="note">
+  <span class="material-symbols-outlined">info</span>
+  <p>Projeto conceitual de portfólio. Nome, depoimentos, dados e imagens são fictícios.</p>
+</div>
+
+  <!-- ========== CABEÇALHO ========== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <span class="logo__icon"><span class="material-symbols-outlined">eco</span></span>
+        <span class="logo__text">
+          <strong>Helena Duarte</strong>
+          <small>Nutricionista</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#atendimentos">Atendimentos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="https://wa.me/5511999999999" target="_blank" class="btn btn--primary nav__cta">Agendar consulta</a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO (primeira seção) ========== -->
+    <section id="inicio" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="badge">Consultas presenciais e online</span>
+          <h1>Comer bem pode ser <em>leve</em>, gostoso e feito para você.</h1>
+          <p class="lead">
+            Nutrição acolhedora e baseada em ciência, sem dietas restritivas. Juntas, vamos construir
+            uma rotina alimentar que cabe na sua vida — e dura.
+          </p>
+
+          <div class="hero__buttons">
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn btn--primary btn--lg">
+              Agendar minha consulta
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="#atendimentos" class="btn btn--outline btn--lg">Conhecer atendimentos</a>
+          </div>
+
+          <div class="rating">
+            <span class="stars">★★★★★</span>
+            <p><strong>+800 pacientes</strong> atendidas com nota 4,9</p>
+          </div>
+        </div>
+
+        <div class="hero__image">
+          <img src="images/nutricionista.png" alt="Retrato da nutricionista Helena Duarte sorrindo em uma cozinha iluminada">
+          <div class="hero__stat">
+            <span class="hero__stat-number">12</span>
+            <span>anos cuidando<br>da sua saúde</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SOBRE ========== -->
+    <section id="sobre" class="section section--card">
+      <div class="container about__grid">
+        <img class="about__image" src="images/prato.png" alt="Prato colorido com quinoa, abóbora assada, abacate e grão-de-bico">
+
+        <div class="about__content">
+          <p class="eyebrow">Sobre mim</p>
+          <h2>Olá, eu sou a Helena.</h2>
+          <p class="muted">
+            Sou nutricionista (CRN-X 00000) e acredito que a alimentação precisa fazer sentido para a sua
+            história, sua rotina e seus gostos. Por isso, cada plano é construído junto com você.
+          </p>
+          <p class="muted">
+            Ao longo de 12 anos, acompanhei mulheres, atletas e famílias que queriam mais energia, saúde e
+            uma relação mais tranquila com a comida. Meu papel é te guiar com clareza e sem culpa.
+          </p>
+
+          <ul class="pillars">
+            <li>
+              <span class="icon-circle"><span class="material-symbols-outlined">science</span></span>
+              <h3>Baseada em evidências</h3>
+              <p>Condutas atualizadas com a ciência da nutrição, sem modismos.</p>
+            </li>
+            <li>
+              <span class="icon-circle"><span class="material-symbols-outlined">volunteer_activism</span></span>
+              <h3>Sem terrorismo nutricional</h3>
+              <p>Nenhum alimento é proibido. Aprendemos a comer com equilíbrio.</p>
+            </li>
+            <li>
+              <span class="icon-circle"><span class="material-symbols-outlined">school</span></span>
+              <h3>Formação sólida</h3>
+              <p>Nutrição pela por universidade federal, pós em nutrição clínica e comportamento alimentar.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ATENDIMENTOS ========== -->
+    <section id="atendimentos" class="section">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow">Atendimentos</p>
+            <h2>Cuidado nutricional para cada momento da sua vida</h2>
+          </div>
+          <p class="muted">Cada consulta é individual e começa entendendo seus objetivos, exames, rotina e preferências.</p>
+        </div>
+
+        <ul class="services">
+          <li class="service">
+            <span class="icon-square"><span class="material-symbols-outlined">monitor_weight</span></span>
+            <h3>Emagrecimento saudável</h3>
+            <p>Perda de peso sustentável, sem dietas da moda e sem efeito sanfona.</p>
+          </li>
+          <li class="service">
+            <span class="icon-square"><span class="material-symbols-outlined">local_florist</span></span>
+            <h3>Saúde da mulher</h3>
+            <p>SOP, TPM, menopausa, fertilidade e equilíbrio hormonal.</p>
+          </li>
+          <li class="service">
+            <span class="icon-square"><span class="material-symbols-outlined">fitness_center</span></span>
+            <h3>Nutrição esportiva</h3>
+            <p>Performance, ganho de massa e recuperação para quem treina.</p>
+          </li>
+          <li class="service">
+            <span class="icon-square"><span class="material-symbols-outlined">pregnant_woman</span></span>
+            <h3>Gestação e lactação</h3>
+            <p>Cuidado nutricional para você e para o bebê em cada fase.</p>
+          </li>
+          <li class="service">
+            <span class="icon-square"><span class="material-symbols-outlined">stethoscope</span></span>
+            <h3>Nutrição clínica</h3>
+            <p>Diabetes, colesterol, hipertensão e saúde intestinal.</p>
+          </li>
+          <li class="service">
+            <span class="icon-square"><span class="material-symbols-outlined">nutrition</span></span>
+            <h3>Reeducação alimentar</h3>
+            <p>Uma relação mais leve e consciente com a comida no dia a dia.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== COMO FUNCIONA ========== -->
+    <section id="como-funciona" class="section section--primary">
+      <div class="container process__grid">
+        <div>
+          <p class="eyebrow eyebrow--light">Como funciona</p>
+          <h2>Um caminho simples, do primeiro contato aos resultados</h2>
+          <img class="process__image" src="images/consulta.png" alt="Consultório aconchegante com mesa de madeira, frutas e plantas">
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="steps__number">01</span>
+            <div>
+              <h3>Agendamento</h3>
+              <p>Escolha o melhor horário, presencial em São Paulo ou online de qualquer lugar.</p>
+            </div>
+          </li>
+          <li>
+            <span class="steps__number">02</span>
+            <div>
+              <h3>Primeira consulta</h3>
+              <p>Anamnese completa, avaliação corporal, análise de exames e dos seus hábitos.</p>
+            </div>
+          </li>
+          <li>
+            <span class="steps__number">03</span>
+            <div>
+              <h3>Plano personalizado</h3>
+              <p>Você recebe um plano alimentar, receitas e lista de compras pensados para você.</p>
+            </div>
+          </li>
+          <li>
+            <span class="steps__number">04</span>
+            <div>
+              <h3>Acompanhamento</h3>
+              <p>Suporte pelo WhatsApp e retornos para ajustar o plano conforme sua evolução.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== DEPOIMENTOS ========== -->
+    <section id="depoimentos" class="section">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <p class="eyebrow">Depoimentos</p>
+          <h2>Histórias de quem já transformou a rotina</h2>
+        </div>
+
+        <ul class="testimonials">
+          <li>
+            <figure class="testimonial">
+              <span class="material-symbols-outlined testimonial__quote">format_quote</span>
+              <blockquote>“Pela primeira vez emagreci sem sofrer. A Helena me ensinou a comer de verdade e hoje não tenho mais medo de comida.”</blockquote>
+              <figcaption>
+                <strong>Mariana S.</strong>
+                <span>Emagrecimento · 14 kg em 8 meses</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="testimonial">
+              <span class="material-symbols-outlined testimonial__quote">format_quote</span>
+              <blockquote>“Meus sintomas de SOP melhoraram muito. O atendimento é humano, atencioso e super bem embasado.”</blockquote>
+              <figcaption>
+                <strong>Juliana R.</strong>
+                <span>Saúde da mulher</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="testimonial">
+              <span class="material-symbols-outlined testimonial__quote">format_quote</span>
+              <blockquote>“Melhorei meu rendimento nos treinos e na corrida. O plano é prático e cabe perfeitamente na minha rotina corrida.”</blockquote>
+              <figcaption>
+                <strong>Camila T.</strong>
+                <span>Nutrição esportiva</span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== DÚVIDAS (FAQ) ========== -->
+    <!-- A tag <details> abre e fecha sozinha, sem precisar de JavaScript! -->
+    <section id="duvidas" class="section section--card">
+      <div class="container faq__grid">
+        <div>
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2>Ficou alguma pergunta?</h2>
+          <p class="muted">Se a sua dúvida não estiver aqui, é só me chamar no WhatsApp.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Como funciona a consulta online? <span class="material-symbols-outlined">add</span></summary>
+            <p>A consulta é feita por videochamada, com a mesma duração e qualidade da presencial. Você recebe o plano alimentar e materiais por um aplicativo exclusivo.</p>
+          </details>
+          <details>
+            <summary>Quanto tempo dura a primeira consulta? <span class="material-symbols-outlined">add</span></summary>
+            <p>A primeira consulta dura cerca de 60 a 75 minutos. Os retornos duram em média 40 minutos.</p>
+          </details>
+          <details>
+            <summary>Vou precisar cortar os alimentos que eu gosto? <span class="material-symbols-outlined">add</span></summary>
+            <p>Não. O plano é construído a partir das suas preferências. O objetivo é equilíbrio, não restrição.</p>
+          </details>
+          <details>
+            <summary>Você atende por convênio? <span class="material-symbols-outlined">add</span></summary>
+            <p>Os atendimentos são particulares, mas emito recibo para que você solicite reembolso ao seu plano de saúde.</p>
+          </details>
+          <details>
+            <summary>Preciso levar exames? <span class="material-symbols-outlined">add</span></summary>
+            <p>Se tiver exames recentes (últimos 6 meses), leve ou envie antes da consulta. Caso não tenha, posso solicitar os necessários.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CHAMADA FINAL ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h2>Pronta para cuidar de você com <em>leveza</em>?</h2>
+          <p class="muted">Agende sua primeira consulta e dê o primeiro passo para uma alimentação que te faz bem.</p>
+          <a href="https://wa.me/5511999999999" target="_blank" class="btn btn--primary btn--lg">
+            <span class="material-symbols-outlined">chat</span>
+            Agendar pelo WhatsApp
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="logo">
+          <span class="logo__icon"><span class="material-symbols-outlined">eco</span></span>
+          <strong class="logo__name">Helena Duarte</strong>
+        </div>
+        <p class="muted small">Nutricionista · CRN-X 00000</p>
+      </div>
+
+      <address class="footer__contact">
+        <span><span class="material-symbols-outlined">location_on</span> Rua XXXXXX, 1234 — XXXXXXXX</span>
+        <a href="mailto:contato@exemplo.com.br"><span class="material-symbols-outlined">mail</span> contato@exemplo.com.br</a>
+      </address>
+
+      <div class="footer__social">
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><span class="material-symbols-outlined">alternate_email</span></a>
+        <a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp"><span class="material-symbols-outlined">chat</span></a>
+      </div>
+    </div>
+    <p class="footer__copy">© <span id="ano"></span> Helena Duarte Nutrição. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
