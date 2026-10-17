@@ -4,7 +4,7 @@ Landing page responsiva para uma nutricionista, criada como **projeto de portfó
 
 > **Aviso:** este é um projeto conceitual. O nome "Helena Duarte", o registro profissional, os depoimentos, os números, os contatos e o endereço são **fictícios**. As imagens foram **geradas por IA**. Nenhum dado aqui representa uma profissional real.
 
-🔗 **Demonstração:** landing-page-para-nutricionista.vercel.app
+🔗 **Demonstração:** [landing-page-para-nutricionista.vercel.app](https://landing-page-para-nutricionista.vercel.app)
 
 ## Objetivo
 
