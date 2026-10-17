@@ -4,7 +4,7 @@ Landing page responsiva para uma nutricionista, criada como **projeto de portfó
 
 > **Aviso:** este é um projeto conceitual. O nome "Helena Duarte", o registro profissional, os depoimentos, os números, os contatos e o endereço são **fictícios**. As imagens foram **geradas por IA**. Nenhum dado aqui representa uma profissional real.
 
-🔗 **Demonstração:** [adicione aqui o link da Vercel]
+🔗 **Demonstração:** landing-page-para-nutricionista.vercel.app
 
 ## Objetivo
 
@@ -55,7 +55,7 @@ Praticar a construção de uma página de serviços completa, do layout à respo
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU-USUARIO/demo-nutricionista.git
+   git clone https://github.com/Hanschucrutes/landing-page-para-nutricionista
    ```
 2. Abra a pasta no VS Code.
 3. Abra o `index.html` no navegador, ou use a extensão **Live Server**.
